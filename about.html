@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | [STUDIO NAME] — Indianapolis Wedding & Event Photographer</title>
+  <meta name="description" content="Meet [YOUR NAME], Indianapolis wedding and event photographer with 10+ years of experience capturing real moments across Greater Indiana. Learn the story behind the studio." />
+
+  <!-- Schema: Person / Photographer -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "[YOUR NAME]",
+    "jobTitle": "Wedding & Event Photographer",
+    "worksFor": {
+      "@type": "LocalBusiness",
+      "name": "[STUDIO NAME]",
+      "telephone": "317-719-4088",
+      "email": "Support@photography.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Indianapolis",
+        "addressRegion": "IN"
+      }
+    },
+    "sameAs": [
+      "https://instagram.com/photography",
+      "https://facebook.com/photography"
+    ]
+  }
+  </script>
+
+  <style>
+    /* ============================================================
+       DESIGN TOKENS
+    ============================================================ */
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+    :root {
+      --ivory:       #FAF7F2;
+      --parchment:   #F0EAE0;
+      --blush:       #D4A5A0;
+      --blush-light: #EDD5D2;
+      --gold:        #B8955A;
+      --gold-light:  #D4B483;
+      --slate:       #2C2C2C;
+      --slate-mid:   #5A5A5A;
+      --white:       #FFFFFF;
+
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'DM Sans', system-ui, sans-serif;
+
+      --nav-h:        72px;
+      --section-pad:  clamp(64px, 8vw, 112px);
+      --container:    min(1160px, 92vw);
+      --radius:       4px;
+      --transition:   0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font-body);
+      background: var(--ivory);
+      color: var(--slate);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; font-family: var(--font-body); }
+    ul { list-style: none; }
+
+    /* ============================================================
+       TYPOGRAPHY
+    ============================================================ */
+    .t-eyebrow {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+    }
+    .t-section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 300;
+      line-height: 1.15;
+    }
+
+    /* ============================================================
+       LAYOUT
+    ============================================================ */
+    .container { width: var(--container); margin-inline: auto; }
+    .section    { padding-block: var(--section-pad); }
+    .section--alt { background: var(--parchment); }
+    .section--dark { background: var(--slate); }
+
+    /* ============================================================
+       BUTTONS
+    ============================================================ */
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 2.2rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: var(--radius);
+      transition: var(--transition);
+      border: 1.5px solid transparent;
+    }
+    .btn-primary { background: var(--gold); color: var(--white); border-color: var(--gold); }
+    .btn-primary:hover {
+      background: #9E7D47; border-color: #9E7D47;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(184,149,90,0.3);
+    }
+    .btn-outline-dark { background: transparent; color: var(--slate); border-color: var(--slate); }
+    .btn-outline-dark:hover { background: var(--slate); color: var(--white); }
+    .btn-outline-light { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.4); }
+    .btn-outline-light:hover { border-color: var(--white); background: rgba(255,255,255,0.1); }
+
+    /* ============================================================
+       IMAGE PLACEHOLDER
+    ============================================================ */
+    .img-placeholder {
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, var(--parchment) 0%, var(--blush-light) 100%);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 0.5rem;
+      color: var(--blush);
+      font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .img-placeholder svg { opacity: 0.4; }
+
+    .hero-image-side img,
+    .sidebar-portrait img,
+    .stack-img-back img,
+    .stack-img-front img,
+    .spotlight-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform var(--transition);
+    }
+    .hero-image-side:hover img { transform: scale(1.03); }
+
+    .img-placeholder.v2 { background: linear-gradient(160deg, #E8DDD4, #D4C4BC); }
+    .img-placeholder.v3 { background: linear-gradient(120deg, #EAE0D8, #C8B8B0); }
+    .img-placeholder.v4 { background: linear-gradient(170deg, #F0E8E0, #DCCCC4); }
+
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    #nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100; height: var(--nav-h);
+      display: flex; align-items: center;
+      background: rgba(250,247,242,0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+    }
+    .nav-inner {
+      width: var(--container); margin-inline: auto;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: var(--font-display); font-size: 1.35rem;
+      font-weight: 400; letter-spacing: 0.04em; color: var(--slate);
+    }
+    .nav-links { display: flex; align-items: center; gap: 2.5rem; }
+    .nav-links a {
+      font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--slate-mid); transition: color var(--transition);
+      position: relative;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -3px; left: 0;
+      width: 0; height: 1px; background: var(--gold);
+      transition: width var(--transition);
+    }
+    .nav-links a:hover::after,
+    .nav-links a[aria-current="page"]::after { width: 100%; }
+    .nav-links a[aria-current="page"] { color: var(--slate); }
+    .nav-book {
+      font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 0.6rem 1.4rem;
+      border: 1.5px solid var(--gold); color: var(--gold);
+      border-radius: var(--radius); transition: var(--transition);
+    }
+    .nav-book:hover { background: var(--gold); color: var(--white); }
+    .nav-toggle {
+      display: none; flex-direction: column;
+      gap: 5px; background: none; border: none; padding: 4px;
+    }
+    .nav-toggle span { display: block; width: 24px; height: 1.5px; background: var(--slate); }
+    .nav-drawer {
+      display: none; position: fixed;
+      top: var(--nav-h); left: 0; right: 0;
+      background: var(--ivory); padding: 2rem;
+      flex-direction: column; gap: 1.5rem;
+      border-top: 1px solid var(--parchment);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08); z-index: 99;
+    }
+    .nav-drawer.open { display: flex; }
+    .nav-drawer a {
+      font-size: 0.85rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--slate); font-weight: 500;
+    }
+
+    /* ============================================================
+       PAGE HERO — full-bleed editorial split
+    ============================================================ */
+    #page-hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: var(--nav-h);
+    }
+
+    .hero-image-side {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-image-side .img-placeholder {
+      position: absolute;
+      inset: 0;
+      transition: transform 8s ease;
+    }
+    /* Subtle Ken Burns on load */
+    .hero-image-side:hover .img-placeholder { transform: scale(1.03); }
+
+    /* Decorative vertical text — signature element for this page */
+    .hero-vert-text {
+      position: absolute;
+      right: -2.5rem;
+      top: 50%;
+      transform: translateY(-50%) rotate(90deg);
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      opacity: 0.6;
+      white-space: nowrap;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .hero-text-side {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(3rem, 7vw, 6rem) clamp(2.5rem, 6vw, 5rem);
+      background: var(--ivory);
+    }
+
+    .hero-text-side .t-eyebrow { margin-bottom: 1rem; }
+
+    .hero-text-side h1 {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 5vw, 4.5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      color: var(--slate);
+    }
+    .hero-text-side h1 em { font-style: italic; color: var(--gold); }
+
+    .hero-tagline {
+      margin-top: 1.5rem;
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      color: var(--slate-mid);
+      line-height: 1.85;
+      max-width: 440px;
+      font-style: italic;
+      font-family: var(--font-display);
+      font-weight: 300;
+      border-left: 2px solid var(--gold-light);
+      padding-left: 1.25rem;
+    }
+
+    .hero-quick-facts {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .hero-fact { }
+    .hero-fact-number {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .hero-fact-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--slate-mid);
+      margin-top: 0.2rem;
+    }
+
+    .hero-text-side .btn { margin-top: 2.5rem; align-self: flex-start; }
+
+    /* ============================================================
+       STORY SECTION — long-form bio
+    ============================================================ */
+    #story { background: var(--ivory); }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    /* Sticky sidebar */
+    .story-sidebar {
+      position: sticky;
+      top: calc(var(--nav-h) + 2rem);
+    }
+
+    .sidebar-portrait {
+      aspect-ratio: 3/4;
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+    }
+    /* Gold offset frame — consistent with other pages */
+    .sidebar-frame {
+      position: absolute;
+      top: -12px; left: -12px; right: 12px; bottom: 12px;
+      border: 1.5px solid var(--gold-light);
+      border-radius: var(--radius);
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    .sidebar-caption {
+      margin-top: 1.5rem;
+    }
+    .sidebar-caption h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 400;
+    }
+    .sidebar-caption p {
+      font-size: 0.78rem;
+      color: var(--slate-mid);
+      margin-top: 0.25rem;
+      letter-spacing: 0.04em;
+    }
+
+    /* Social links in sidebar */
+    .sidebar-social {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+    .sidebar-social-link {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(0,0,0,0.1);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--slate-mid);
+      transition: var(--transition);
+    }
+    .sidebar-social-link:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* Story body text */
+    .story-body { padding-top: 0.5rem; }
+
+    .story-intro {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      font-weight: 300;
+      line-height: 1.5;
+      color: var(--slate);
+      margin-bottom: 2rem;
+    }
+    .story-intro em { font-style: italic; color: var(--gold); }
+
+    .story-body p {
+      font-size: 1rem;
+      color: var(--slate-mid);
+      line-height: 1.9;
+      margin-bottom: 1.5rem;
+    }
+    .story-body p:last-of-type { margin-bottom: 0; }
+
+    /* Pull quote */
+    .pull-quote {
+      margin-block: 2.5rem;
+      padding: 2rem 2rem 2rem 2.5rem;
+      border-left: 3px solid var(--gold);
+      background: var(--parchment);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    .pull-quote blockquote {
+      font-family: var(--font-display);
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--slate);
+      line-height: 1.5;
+    }
+    .pull-quote cite {
+      display: block;
+      margin-top: 0.75rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-style: normal;
+    }
+
+    /* ============================================================
+       APPROACH — how I shoot
+    ============================================================ */
+    #approach { background: var(--parchment); }
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .approach-image-stack {
+      position: relative;
+      height: 520px;
+    }
+    /* Two overlapping images — a distinctive layout touch */
+    .stack-img-back {
+      position: absolute;
+      top: 0; left: 0;
+      width: 72%; aspect-ratio: 3/4;
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .stack-img-front {
+      position: absolute;
+      bottom: 0; right: 0;
+      width: 58%; aspect-ratio: 4/5;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.12);
+    }
+    /* Gold dot accent */
+    .stack-accent {
+      position: absolute;
+      top: 42%; right: 28%;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--gold-light);
+      opacity: 0.7;
+    }
+
+    .approach-text .t-eyebrow { margin-bottom: 0.75rem; }
+    .approach-text h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 300;
+      line-height: 1.2;
+    }
+    .approach-text h2 em { font-style: italic; }
+
+    .approach-principles {
+      margin-top: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .principle {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+    }
+    .principle-marker {
+      flex-shrink: 0;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      border: 1px solid var(--gold-light);
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 2px;
+    }
+    .principle-marker svg { color: var(--gold); }
+    .principle-body h3 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 400;
+      margin-bottom: 0.25rem;
+    }
+    .principle-body p { font-size: 0.85rem; color: var(--slate-mid); line-height: 1.75; }
+
+    /* ============================================================
+       BEHIND THE LENS — fun facts / personality strip
+    ============================================================ */
+    #behind-the-lens { background: var(--slate); }
+
+    #behind-the-lens .t-eyebrow { color: var(--gold-light); margin-bottom: 0.75rem; }
+    #behind-the-lens .t-section-title { color: var(--white); }
+    #behind-the-lens .t-section-title em { font-style: italic; color: var(--gold-light); }
+
+    .lens-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+
+    .lens-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: var(--radius);
+      padding: 2rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: var(--transition);
+    }
+    .lens-card:hover {
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(184,149,90,0.25);
+    }
+
+    .lens-icon {
+      color: var(--gold-light);
+      opacity: 0.8;
+    }
+
+    .lens-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .lens-value {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.2;
+    }
+
+    .lens-note {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.7;
+    }
+
+    /* ============================================================
+       GEAR — equipment list
+    ============================================================ */
+    #gear { background: var(--ivory); }
+
+    .gear-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+
+    .gear-col h3 {
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(184,149,90,0.2);
+    }
+
+    .gear-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .gear-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.875rem;
+      color: var(--slate-mid);
+    }
+    .gear-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--gold-light);
+      flex-shrink: 0;
+      opacity: 0.7;
+    }
+
+    /* ============================================================
+       TESTIMONIAL SPOTLIGHT — single large quote
+    ============================================================ */
+    #testimonial-spotlight {
+      background: var(--parchment);
+      padding-block: var(--section-pad);
+      text-align: center;
+    }
+
+    .spotlight-quote {
+      max-width: 760px;
+      margin-inline: auto;
+    }
+    .spotlight-mark {
+      font-family: var(--font-display);
+      font-size: 6rem;
+      font-weight: 300;
+      color: var(--gold-light);
+      opacity: 0.4;
+      line-height: 0.6;
+      display: block;
+      margin-bottom: 1.5rem;
+    }
+    .spotlight-text {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--slate);
+      line-height: 1.5;
+    }
+    .spotlight-author {
+      margin-top: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .spotlight-avatar {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: var(--blush-light);
+      overflow: hidden;
+    }
+    .spotlight-author-info {}
+    .spotlight-author-name {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--slate);
+    }
+    .spotlight-author-type {
+      font-size: 0.72rem;
+      color: var(--slate-mid);
+      letter-spacing: 0.06em;
+    }
+    .spotlight-stars {
+      color: var(--gold);
+      font-size: 0.85rem;
+      margin-top: 0.15rem;
+    }
+
+    /* ============================================================
+       FEATURED IN / PRESS (optional — delete if unused)
+    ============================================================ */
+    #featured-in {
+      background: var(--ivory);
+      padding-block: 3rem;
+      border-top: 1px solid rgba(0,0,0,0.05);
+    }
+    .featured-in-inner {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .featured-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--slate-mid);
+      white-space: nowrap;
+    }
+    .featured-logos {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .featured-logo-placeholder {
+      height: 28px;
+      width: 100px;
+      background: var(--parchment);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--slate-mid);
+      opacity: 0.6;
+    }
+
+    /* ============================================================
+       CTA — book / connect
+    ============================================================ -->
+    #about-cta {
+      background: linear-gradient(135deg, #8A7060 0%, #5C4A3A 100%);
+      padding-block: 6rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    #about-cta::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+    }
+    .cta-content { position: relative; z-index: 1; }
+    #about-cta .t-eyebrow { color: var(--gold-light); }
+    #about-cta h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 300; color: var(--white);
+      margin-top: 0.75rem; line-height: 1.1;
+    }
+    #about-cta h2 em { font-style: italic; color: var(--gold-light); }
+    #about-cta p {
+      color: rgba(255,255,255,0.65);
+      max-width: 440px; margin-inline: auto;
+      margin-top: 1rem;
+    }
+    .cta-btn-row {
+      display: flex; gap: 1rem;
+      justify-content: center; flex-wrap: wrap;
+      margin-top: 2.5rem;
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    #footer { background: var(--slate); padding-block: 3.5rem 2rem; }
+    .footer-top {
+      display: grid; grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 3rem; padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-brand .logo {
+      font-family: var(--font-display); font-size: 1.4rem;
+      color: var(--white); letter-spacing: 0.04em;
+    }
+    .footer-brand p {
+      font-size: 0.85rem; color: rgba(255,255,255,0.4);
+      margin-top: 0.75rem; line-height: 1.75; max-width: 280px;
+    }
+    .footer-col h4 {
+      font-size: 0.68rem; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--gold-light); margin-bottom: 1.25rem;
+    }
+    .footer-col ul { display: flex; flex-direction: column; gap: 0.65rem; }
+    .footer-col ul a {
+      font-size: 0.85rem; color: rgba(255,255,255,0.45); transition: color var(--transition);
+    }
+    .footer-col ul a:hover { color: var(--white); }
+    .footer-bottom {
+      padding-top: 2rem; display: flex;
+      justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-bottom p { font-size: 0.75rem; color: rgba(255,255,255,0.3); }
+    .social-links { display: flex; gap: 1rem; }
+    .social-link {
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.15);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.45); transition: var(--transition);
+    }
+    .social-link:hover { border-color: var(--gold); color: var(--gold-light); }
+
+    /* ============================================================
+       SCROLL REVEAL
+    ============================================================ */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 1024px) {
+      #page-hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-image-side { height: 55vw; min-height: 300px; }
+      .hero-vert-text { display: none; }
+      .story-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .story-sidebar { position: static; }
+      .approach-grid { grid-template-columns: 1fr; }
+      .approach-image-stack { height: 340px; }
+      .gear-columns { grid-template-columns: 1fr 1fr; }
+      .lens-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 720px) {
+      .nav-links, .nav-book { display: none; }
+      .nav-toggle { display: flex; }
+      .lens-grid { grid-template-columns: 1fr; }
+      .gear-columns { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .footer-top { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+      .hero-quick-facts { gap: 1.5rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav id="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Mara Leigh Photography</a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="nav-book">Book a Session</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" id="navToggle">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-drawer" id="navDrawer" role="navigation" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn btn-primary" style="text-align:center;">Book a Session</a>
+  </div>
+
+
+  <!-- ============================================================
+       PAGE HERO — full-bleed split layout
+  ============================================================ -->
+  <header id="page-hero" aria-labelledby="page-title">
+
+    <div class="hero-image-side">
+      <img src="https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Photographer portrait holding a camera" loading="lazy">
+      <span class="hero-vert-text" aria-hidden="true">Indianapolis, Indiana · Est. [YEAR]</span>
+    </div>
+
+    <div class="hero-text-side reveal">
+      <span class="t-eyebrow">About the Photographer</span>
+      <h1 id="page-title">
+        Hi, I'm<br><em>John Doe</em>
+      </h1>
+      <p class="hero-tagline">
+        "I don't just take pictures. I show up, pay attention, and quietly
+        document the moments you'll want to remember forever."
+      </p>
+      <div class="hero-quick-facts" aria-label="Quick facts">
+        <div class="hero-fact">
+          <div class="hero-fact-number">10+</div>
+          <div class="hero-fact-label">Years Shooting</div>
+        </div>
+        <div class="hero-fact">
+          <div class="hero-fact-number">500+</div>
+          <div class="hero-fact-label">Sessions</div>
+        </div>
+        <div class="hero-fact">
+          <div class="hero-fact-number">Indy</div>
+          <div class="hero-fact-label">Based &amp; Available</div>
+        </div>
+      </div>
+      <a href="contact.html" class="btn btn-primary">Let's Work Together</a>
+    </div>
+
+  </header>
+
+
+  <!-- ============================================================
+       STORY — bio section
+  ============================================================ -->
+  <section id="story" class="section" aria-labelledby="story-heading">
+    <div class="container">
+      <div class="story-grid">
+
+        <!-- Sticky sidebar -->
+        <aside class="story-sidebar reveal">
+          <div class="sidebar-portrait">
+            <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1200&q=80" alt="Behind the scenes photographer at work" loading="lazy">
+            <div class="sidebar-frame" aria-hidden="true"></div>
+          </div>
+          <div class="sidebar-caption">
+            <h3>John Doe</h3>
+            <p>Indianapolis, IN · [STUDIO NAME]</p>
+          </div>
+          <div class="sidebar-social" aria-label="Social media links">
+            <a href="https://instagram.com/photography" class="sidebar-social-link" aria-label="Instagram">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://facebook.com/photography" class="sidebar-social-link" aria-label="Facebook">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://linkedin.com" class="sidebar-social-link" aria-label="LinkedIn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          </div>
+        </aside>
+
+        <!-- Long-form bio -->
+        <div class="story-body reveal reveal-delay-1">
+
+          <p class="story-intro">
+            I picked up my first camera over a decade ago and never once thought of putting it down.
+            What started as <em>curiosity</em> became a calling.
+          </p>
+
+          <p>
+            I'm [YOUR NAME], and I've been photographing weddings, families, portraits, and life's in-between
+            moments across Indianapolis and Greater Indiana for more than 10 years. In that time, I've
+            learned that the best photos don't happen when you're posing — they happen in the quiet
+            seconds between poses. The laugh that breaks through. The nervous hand-squeeze. The grandmother
+            watching from the back row. That's where I live with my camera.
+          </p>
+
+          <p>
+            I grew up in the Indianapolis area and this city is woven into the way I see light, people,
+            and story. Whether we're shooting at Eagle Creek Park, a downtown venue, a backyard, or a
+            church in the suburbs — I know this place, and I know how to make it beautiful in a frame.
+          </p>
+
+          <div class="pull-quote reveal">
+            <blockquote>
+              "The most important thing I can do on your wedding day is disappear. Not literally —
+              but blend in well enough that you forget I'm there, and the real moments find their way
+              into the lens on their own."
+            </blockquote>
+            <cite>— [YOUR NAME]</cite>
+          </div>
+
+          <p>
+            My style is documentary-first with a warm, editorial finish. I believe in honest light, real
+            emotion, and editing that enhances rather than transforms. When you look back at these photos
+            in 20 years, I want you to say "that's exactly how it felt" — not "I don't recognize myself."
+          </p>
+
+          <p>
+            Outside of photographing your moments, I [ADD PERSONAL DETAIL — e.g., "am a husband and parent
+            of two kids who keep me humble and constantly remind me why family photos matter"] and I believe
+            deeply that the people and relationships we invest in are the only things that truly last.
+            That belief shows up in every session I book.
+          </p>
+
+          <p>
+            Thank you for being here. Whether you're just browsing or ready to book — I'd genuinely
+            love to hear from you. This work is personal to me, and every client I take on becomes
+            part of the story of this studio.
+          </p>
+
+          <div style="margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="contact.html" class="btn btn-primary">Book a Session</a>
+            <a href="portfolio.html" class="btn btn-outline-dark">View My Work</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       APPROACH — how I shoot
+  ============================================================ -->
+  <section id="approach" class="section section--alt" aria-labelledby="approach-heading">
+    <div class="container">
+      <div class="approach-grid">
+
+        <div class="approach-image-stack reveal" aria-label="Photography approach visual">
+          <div class="stack-img-back">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80" alt="Photographer capturing candid outdoor moments" loading="lazy">
+          </div>
+          <div class="stack-img-front">
+            <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=1200&q=80" alt="Wedding portrait example in natural light" loading="lazy">
+          </div>
+          <div class="stack-accent" aria-hidden="true"></div>
+        </div>
+
+        <div class="approach-text reveal reveal-delay-1">
+          <span class="t-eyebrow">My Approach</span>
+          <h2 id="approach-heading">
+            How I work<br>with <em>every client</em>
+          </h2>
+          <div class="approach-principles">
+            <div class="principle">
+              <div class="principle-marker" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg>
+              </div>
+              <div class="principle-body">
+                <h3>People Before Poses</h3>
+                <p>I direct just enough to get you comfortable, then step back and let you be yourselves. The real moments come when you forget I'm holding a camera.</p>
+              </div>
+            </div>
+            <div class="principle">
+              <div class="principle-marker" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
+              </div>
+              <div class="principle-body">
+                <h3>Light as a Tool</h3>
+                <p>I'm obsessed with natural light — the way it falls at golden hour, bounces off walls, and tells time. I plan every session around making light work for you.</p>
+              </div>
+            </div>
+            <div class="principle">
+              <div class="principle-marker" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
+              <div class="principle-body">
+                <h3>Edit with Restraint</h3>
+                <p>My editing is intentional, not heavy. I enhance what's already there — I don't swap skies, over-smooth skin, or apply the same filter to every image.</p>
+              </div>
+            </div>
+            <div class="principle">
+              <div class="principle-marker" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12"/><path d="M1 1l22 22"/></svg>
+              </div>
+              <div class="principle-body">
+                <h3>Communication Always</h3>
+                <p>I respond to every message within 24 hours and stay in close contact from booking through delivery. You'll never feel like you're chasing me down for an update.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       BEHIND THE LENS — personality / fun facts
+  ============================================================ -->
+  <section id="behind-the-lens" class="section" aria-labelledby="lens-heading">
+    <div class="container">
+      <div style="text-align: center; max-width: 560px; margin-inline: auto;" class="reveal">
+        <span class="t-eyebrow">The Human Behind the Camera</span>
+        <h2 id="lens-heading" class="t-section-title">
+          A few things you should<br>know about <em>me</em>
+        </h2>
+      </div>
+      <div class="lens-grid">
+
+        <div class="lens-card reveal">
+          <div class="lens-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          </div>
+          <span class="lens-label">My vibe on shoot day</span>
+          <span class="lens-value">Calm, quiet energy with a lot of laughing</span>
+          <p class="lens-note">I genuinely believe relaxed people make better photos. My job is to lower the room temperature, not raise it.</p>
+        </div>
+
+        <div class="lens-card reveal reveal-delay-1">
+          <div class="lens-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <span class="lens-label">Favorite places to shoot in Indy</span>
+          <span class="lens-value">Eagle Creek, Mass Ave, White River, anywhere at golden hour</span>
+          <p class="lens-note">I know this city's light. Ask me for location recommendations — I've got opinions.</p>
+        </div>
+
+        <div class="lens-card reveal reveal-delay-2">
+          <div class="lens-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <span class="lens-label">Based in</span>
+          <span class="lens-value">Indianapolis, Indiana</span>
+          <p class="lens-note">Born and raised in Greater Indianapolis. Available throughout Indiana and for destination bookings.</p>
+        </div>
+
+        <div class="lens-card reveal">
+          <div class="lens-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <span class="lens-label">What I believe about photos</span>
+          <span class="lens-value">They're not decorations. They're time travel.</span>
+          <p class="lens-note">When you look at a photo from 20 years ago, you don't see pixels — you feel the room, the people, the day. That's what I'm making.</p>
+        </div>
+
+        <div class="lens-card reveal reveal-delay-1">
+          <div class="lens-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <span class="lens-label">The type of clients I love working with</span>
+          <span class="lens-value">People who are fully present and not afraid to feel something</span>
+          <p class="lens-note">If you're going to cry, cry. If you want to laugh, laugh. I'm here for all of it.</p>
+        </div>
+
+        <div class="lens-card reveal reveal-delay-2">
+          <div class="lens-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <span class="lens-label">The thing I'm most proud of</span>
+          <span class="lens-value">[ADD YOUR OWN — e.g., "10 years of 5-star reviews and zero missed shot lists"]</span>
+          <p class="lens-note">Replace this with something genuine and personal. Your clients want to know the real you.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       GEAR — equipment
+  ============================================================ -->
+  <section id="gear" class="section" aria-labelledby="gear-heading">
+    <div class="container">
+      <div style="text-align:center; max-width:560px; margin-inline:auto;" class="reveal">
+        <span class="t-eyebrow">The Equipment</span>
+        <h2 id="gear-heading" class="t-section-title">Professional gear<br>for every moment</h2>
+        <p style="margin-top:0.75rem; font-size:0.95rem; color:var(--slate-mid); line-height:1.8;">
+          Every session is covered with professional-grade, redundant equipment.
+          Replace the items below with your actual kit.
+        </p>
+      </div>
+      <div class="gear-columns reveal">
+        <div class="gear-col">
+          <h3>Camera Bodies</h3>
+          <ul class="gear-list">
+            <li class="gear-item"><span class="gear-dot" aria-hidden="true"></span>[Primary Camera Body — e.g., Sony A7 IV]</li>
+            <li class="gear-item"><span class="gear-dot" aria-hidden="true"></span>[Backup Camera Body — e.g., Sony A7 III]</li>
+            <li class="gear-item"><span class="gear-dot" aria-hidden="true"></span>[Secondary Body — e.g., Fujifilm XT-5]</li>
+          </ul>
+        </div>
+        <div class="gear-col">
+          <h3>Lenses</h3>
+          <ul class="gear-list">
+            <li class="gear-item"><span class="gear-dot" aria-hidden="true"></span>[Portrait Lens — e.g., 85mm f/1.4]</li>
+            <li class="gear-item"><span class="gear-dot" aria-hidden="true"></span>[Zoom Lens — e.g., 24–70mm f/2.8]</li>
+            <li class="gear-item"><span class="gear-dot" aria-hidden="true"></span>[Wide Lens — e.g., 35mm f/1.8]</li>
+            <li class="gear-item"><span class="gear-dot" aria-hidden="true"></span>[Telephoto — e.g., 70–200mm f/2.8]</li>
+          </ul>
+        </div>
+        <div class="gear-col">
+          <h3>Lighting &amp; Accessories</h3>
+          <ul class="gear-list">
+            <li class="gear-item"><span class="gear-dot" aria-hidden="true"></span>[Flash System — e.g., Profoto A10]</li>
+            <li class="gear-item"><span class="gear-dot" aria-hidden="true"></span>[Continuous Light — e.g., Godox SL60W]</li>
+            <li class="gear-item"><span class="gear-dot" aria-hidden="true"></span>Dual memory card backup on every shoot</li>
+            <li class="gear-item"><span class="gear-dot" aria-hidden="true"></span>Off-site cloud backup within 24 hours</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       TESTIMONIAL SPOTLIGHT
+  ============================================================ -->
+  <section id="testimonial-spotlight" aria-label="Client testimonial">
+    <div class="container reveal">
+      <div class="spotlight-quote">
+        <span class="spotlight-mark" aria-hidden="true">"</span>
+        <p class="spotlight-text">
+          [YOUR NAME] has this rare ability to be completely invisible and completely present at the same time.
+          Every photo feels like a memory I already have — not a photo someone took of me.
+        </p>
+        <div class="spotlight-author">
+          <div class="spotlight-avatar" role="img" aria-label="Client photo">
+          <img src="https://images.pexels.com/photos/3760858/pexels-photo-3760858.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Happy photography client" loading="lazy">
+        </div>
+          <div class="spotlight-author-info">
+            <div class="spotlight-author-name">[CLIENT NAME]</div>
+            <div class="spotlight-author-type">Wedding Client · Indianapolis, IN</div>
+            <div class="spotlight-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FEATURED IN (optional — delete this section if unused)
+  ============================================================ -->
+  <section id="featured-in" aria-label="Press and features">
+    <div class="container">
+      <div class="featured-in-inner">
+        <span class="featured-label">As seen in</span>
+        <div class="featured-logos">
+          <div class="featured-logo-placeholder">[Publication]</div>
+          <div class="featured-logo-placeholder">[Blog Name]</div>
+          <div class="featured-logo-placeholder">[Award]</div>
+          <div class="featured-logo-placeholder">[Feature]</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CTA BANNER
+  ============================================================ -->
+  <section id="about-cta" aria-labelledby="cta-heading">
+    <div class="container cta-content">
+      <div class="reveal">
+        <span class="t-eyebrow">Let's Connect</span>
+        <h2 id="cta-heading">
+          Ready to work<br><em>together?</em>
+        </h2>
+        <p>
+          I'd love to hear about your day, your people, and what you want to
+          remember forever. Reach out — there's no pressure, just a conversation.
+        </p>
+        <div class="cta-btn-row">
+          <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+          <a href="services.html" class="btn btn-outline-light">See Packages</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer id="footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo">[STUDIO NAME]</div>
+          <p>Indianapolis wedding &amp; event photographer capturing real moments across Greater Indiana for over a decade.</p>
+          <div class="social-links" style="margin-top:1.5rem;">
+            <a href="https://instagram.com/photography" class="social-link" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://facebook.com/photography" class="social-link" aria-label="Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://linkedin.com" class="social-link" aria-label="LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="services.html">Services &amp; Pricing</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">Wedding Photography</a></li>
+            <li><a href="services.html">Portrait Sessions</a></li>
+            <li><a href="services.html">Family &amp; Events</a></li>
+            <li><a href="services.html">Newborn Sessions</a></li>
+            <li><a href="services.html">Mini Sessions</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 [STUDIO NAME]. All rights reserved. Indianapolis, IN.</p>
+        <p>Site by <a href="https://yourwebbuild.com" style="color:var(--gold-light);">YourWebBuild</a></p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+  <script>
+    // ── Mobile nav ────────────────────────────────────────────────
+    const navToggle = document.getElementById('navToggle');
+    const navDrawer = document.getElementById('navDrawer');
+    navToggle.addEventListener('click', () => {
+      const open = navDrawer.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open);
+    });
+    navDrawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      navDrawer.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }));
+
+    // ── Scroll reveal ─────────────────────────────────────────────
+    const revealEls = document.querySelectorAll('.reveal');
+    const ro = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); }
+      });
+    }, { threshold: 0.08 });
+    revealEls.forEach(el => ro.observe(el));
+  </script>
+
+</body>
+</html>

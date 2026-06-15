@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services & Pricing | [STUDIO NAME] — Indianapolis Wedding & Event Photographer</title>
+  <meta name="description" content="Explore wedding, portrait, family, event, and mini session packages from [STUDIO NAME] — Indianapolis photographer serving Greater Indiana. Transparent pricing, no hidden fees." />
+
+  <!-- Schema: Service offerings -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "[STUDIO NAME]",
+    "telephone": "317-719-4088",
+    "email": "Support@photography.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Indianapolis",
+      "addressRegion": "IN"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Photography Packages",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Wedding Photography" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Portrait Sessions" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Family & Event Coverage" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mini Sessions" } }
+      ]
+    }
+  }
+  </script>
+
+  <style>
+    /* ============================================================
+       DESIGN TOKENS
+    ============================================================ */
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+    :root {
+      --ivory:      #FAF7F2;
+      --parchment:  #F0EAE0;
+      --blush:      #D4A5A0;
+      --blush-light:#EDD5D2;
+      --gold:       #B8955A;
+      --gold-light: #D4B483;
+      --slate:      #2C2C2C;
+      --slate-mid:  #5A5A5A;
+      --white:      #FFFFFF;
+
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'DM Sans', system-ui, sans-serif;
+
+      --nav-h: 72px;
+      --section-pad: clamp(64px, 8vw, 112px);
+      --container: min(1160px, 92vw);
+      --container-narrow: min(860px, 92vw);
+      --radius: 4px;
+      --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font-body);
+      background: var(--ivory);
+      color: var(--slate);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; font-family: var(--font-body); }
+    ul { list-style: none; }
+
+    /* ============================================================
+       TYPOGRAPHY
+    ============================================================ */
+    .t-eyebrow {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+    }
+    .t-section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 300;
+      line-height: 1.15;
+    }
+
+    /* ============================================================
+       LAYOUT
+    ============================================================ */
+    .container        { width: var(--container); margin-inline: auto; }
+    .container-narrow { width: var(--container-narrow); margin-inline: auto; }
+    .section          { padding-block: var(--section-pad); }
+    .section--alt     { background: var(--parchment); }
+    .text-center      { text-align: center; }
+
+    /* ============================================================
+       BUTTONS
+    ============================================================ */
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 2.2rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: var(--radius);
+      transition: var(--transition);
+      border: 1.5px solid transparent;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--white);
+      border-color: var(--gold);
+    }
+    .btn-primary:hover {
+      background: #9E7D47;
+      border-color: #9E7D47;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(184,149,90,0.3);
+    }
+    .btn-outline-dark {
+      background: transparent;
+      color: var(--slate);
+      border-color: var(--slate);
+    }
+    .btn-outline-dark:hover { background: var(--slate); color: var(--white); }
+    .btn-outline-gold {
+      background: transparent;
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+    .btn-outline-gold:hover { background: var(--gold); color: var(--white); }
+    .btn-outline-light {
+      background: transparent;
+      color: var(--white);
+      border: 1.5px solid rgba(255,255,255,0.35);
+    }
+    .btn-outline-light:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
+
+    /* ============================================================
+       IMAGE PLACEHOLDER
+    ============================================================ */
+    .img-placeholder {
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, var(--parchment) 0%, var(--blush-light) 100%);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 0.5rem;
+      color: var(--blush);
+      font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .img-placeholder svg { opacity: 0.4; }
+
+    .package-image img,
+    .session-image img,
+    .philosophy-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform var(--transition);
+    }
+    .package-card:hover .package-image img,
+    .session-card:hover .session-image img {
+      transform: scale(1.04);
+    }
+
+    .img-placeholder.v2 { background: linear-gradient(160deg, #E8DDD4, #D4C4BC); }
+    .img-placeholder.v3 { background: linear-gradient(120deg, #EAE0D8, #C8B8B0); }
+
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    #nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100; height: var(--nav-h);
+      display: flex; align-items: center;
+      background: rgba(250,247,242,0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+    }
+    .nav-inner {
+      width: var(--container); margin-inline: auto;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: var(--font-display); font-size: 1.35rem;
+      font-weight: 400; letter-spacing: 0.04em; color: var(--slate);
+    }
+    .nav-links { display: flex; align-items: center; gap: 2.5rem; }
+    .nav-links a {
+      font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--slate-mid); transition: color var(--transition);
+      position: relative;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -3px; left: 0;
+      width: 0; height: 1px; background: var(--gold);
+      transition: width var(--transition);
+    }
+    .nav-links a:hover::after,
+    .nav-links a[aria-current="page"]::after { width: 100%; }
+    .nav-links a[aria-current="page"] { color: var(--slate); }
+    .nav-book {
+      font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 0.6rem 1.4rem;
+      border: 1.5px solid var(--gold); color: var(--gold);
+      border-radius: var(--radius); transition: var(--transition);
+    }
+    .nav-book:hover { background: var(--gold); color: var(--white); }
+    .nav-toggle {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; padding: 4px;
+    }
+    .nav-toggle span { display: block; width: 24px; height: 1.5px; background: var(--slate); }
+    .nav-drawer {
+      display: none; position: fixed;
+      top: var(--nav-h); left: 0; right: 0;
+      background: var(--ivory); padding: 2rem;
+      flex-direction: column; gap: 1.5rem;
+      border-top: 1px solid var(--parchment);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08); z-index: 99;
+    }
+    .nav-drawer.open { display: flex; }
+    .nav-drawer a {
+      font-size: 0.85rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--slate); font-weight: 500;
+    }
+
+    /* ============================================================
+       PAGE HERO
+    ============================================================ */
+    #page-hero {
+      padding-top: calc(var(--nav-h) + 5rem);
+      padding-bottom: 4rem;
+      text-align: center;
+    }
+    .hero-rule-group {
+      display: flex; align-items: center; justify-content: center;
+      gap: 1.25rem; margin-bottom: 1rem;
+    }
+    .hero-rule-line { width: 48px; height: 1px; background: var(--gold-light); opacity: 0.7; }
+
+    #page-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 300; line-height: 1.05; color: var(--slate);
+    }
+    #page-hero h1 em { font-style: italic; color: var(--gold); }
+    #page-hero p {
+      max-width: 520px; margin-inline: auto; margin-top: 1.25rem;
+      color: var(--slate-mid); font-size: 1rem; line-height: 1.8;
+    }
+
+    /* ============================================================
+       VALUE PROMISE STRIP
+    ============================================================ */
+    #promise {
+      background: var(--slate);
+      padding-block: 2.25rem;
+    }
+    .promise-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.07);
+    }
+    .promise-item {
+      background: var(--slate);
+      padding: 1.75rem 1.5rem;
+      display: flex; align-items: flex-start; gap: 1rem;
+    }
+    .promise-icon {
+      flex-shrink: 0;
+      color: var(--gold-light);
+      margin-top: 2px;
+    }
+    .promise-item h3 {
+      font-size: 0.8rem; font-weight: 500;
+      letter-spacing: 0.04em; color: var(--white);
+      margin-bottom: 0.2rem;
+    }
+    .promise-item p {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.6;
+    }
+
+    /* ============================================================
+       SECTION HEADER (reusable)
+    ============================================================ */
+    .section-header { text-align: center; max-width: 580px; margin-inline: auto; }
+    .section-header .t-eyebrow { margin-bottom: 0.75rem; }
+    .section-header p {
+      margin-top: 0.85rem;
+      font-size: 0.95rem;
+      color: var(--slate-mid);
+      line-height: 1.8;
+    }
+
+    /* ============================================================
+       WEDDING PACKAGES — tiered cards
+    ============================================================ */
+    #weddings { background: var(--ivory); }
+
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+      align-items: start;
+    }
+
+    .package-card {
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .package-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+    }
+
+    /* Featured / most popular card */
+    .package-card.featured {
+      border-color: var(--gold);
+      box-shadow: 0 8px 30px rgba(184,149,90,0.15);
+      transform: translateY(-8px);
+    }
+    .package-card.featured:hover {
+      transform: translateY(-13px);
+      box-shadow: 0 24px 55px rgba(184,149,90,0.2);
+    }
+
+    .package-badge {
+      background: var(--gold);
+      color: var(--white);
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 0.45rem 1rem;
+    }
+
+    .package-image {
+      aspect-ratio: 16/9;
+      overflow: hidden;
+    }
+
+    .package-body {
+      padding: 2rem 1.75rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .package-name {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 400;
+      line-height: 1.1;
+    }
+
+    .package-tagline {
+      font-size: 0.78rem;
+      color: var(--slate-mid);
+      margin-top: 0.3rem;
+      font-style: italic;
+    }
+
+    .package-price {
+      margin-top: 1.25rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+    }
+    .price-from {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--slate-mid);
+    }
+    .price-amount {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .package-divider {
+      width: 32px; height: 1px;
+      background: var(--gold-light);
+      opacity: 0.6;
+      margin-block: 1.25rem;
+    }
+
+    .package-includes {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--slate-mid);
+      margin-bottom: 0.85rem;
+    }
+
+    .package-features {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      flex: 1;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      font-size: 0.85rem;
+      color: var(--slate-mid);
+      line-height: 1.5;
+    }
+    .feature-check {
+      flex-shrink: 0;
+      margin-top: 2px;
+      color: var(--gold);
+    }
+    .feature-item.muted { opacity: 0.45; }
+    .feature-item.muted .feature-check { color: var(--slate-mid); }
+
+    .package-card .btn {
+      margin-top: 2rem;
+      text-align: center;
+      display: block;
+    }
+
+    /* Add-ons note */
+    .addons-note {
+      text-align: center;
+      margin-top: 2.5rem;
+      font-size: 0.82rem;
+      color: var(--slate-mid);
+    }
+    .addons-note a {
+      color: var(--gold);
+      border-bottom: 1px solid rgba(184,149,90,0.3);
+      transition: border-color var(--transition);
+    }
+    .addons-note a:hover { border-color: var(--gold); }
+
+    /* ============================================================
+       PORTRAIT / FAMILY / EVENT — horizontal list cards
+    ============================================================ */
+    #other-sessions { background: var(--parchment); }
+
+    .session-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+
+    .session-card {
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.05);
+      border-radius: var(--radius);
+      display: grid;
+      grid-template-columns: 260px 1fr auto;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    .session-card:hover {
+      box-shadow: 0 12px 36px rgba(0,0,0,0.07);
+      transform: translateY(-2px);
+    }
+
+    .session-image { overflow: hidden; }
+    .session-image .img-placeholder { min-height: 220px; }
+    .session-image .img-placeholder { transition: transform var(--transition); }
+    .session-card:hover .session-image .img-placeholder { transform: scale(1.04); }
+
+    .session-body {
+      padding: 2rem 2rem 2rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .session-cat {
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    .session-name {
+      font-family: var(--font-display);
+      font-size: 1.7rem;
+      font-weight: 400;
+      margin-top: 0.3rem;
+      line-height: 1.15;
+    }
+
+    .session-desc {
+      margin-top: 0.75rem;
+      font-size: 0.875rem;
+      color: var(--slate-mid);
+      line-height: 1.8;
+      max-width: 480px;
+    }
+
+    .session-tags {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+      margin-top: 1.1rem;
+    }
+    .session-tag {
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.75rem;
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 100px;
+      color: var(--slate-mid);
+    }
+
+    .session-pricing {
+      padding: 2rem 2.5rem 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 1rem;
+      min-width: 180px;
+      border-left: 1px solid rgba(0,0,0,0.05);
+    }
+    .session-price-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--slate-mid);
+      text-align: right;
+    }
+    .session-price-amount {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+      text-align: right;
+    }
+    .session-price-note {
+      font-size: 0.7rem;
+      color: var(--slate-mid);
+      text-align: right;
+    }
+
+    /* ============================================================
+       ADD-ONS
+    ============================================================ */
+    #addons { background: var(--ivory); }
+
+    .addons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      margin-top: 3rem;
+    }
+
+    .addon-card {
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.05);
+      border-radius: var(--radius);
+      padding: 1.75rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transition: var(--transition);
+    }
+    .addon-card:hover {
+      border-color: rgba(184,149,90,0.3);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+
+    .addon-icon {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--blush-light);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--blush);
+    }
+    .addon-name {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+    .addon-desc { font-size: 0.8rem; color: var(--slate-mid); line-height: 1.7; flex: 1; }
+    .addon-price {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 300;
+      color: var(--gold);
+    }
+
+    /* ============================================================
+       WHAT'S ALWAYS INCLUDED
+    ============================================================ */
+    #always-included { background: var(--parchment); }
+
+    .included-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .included-item {
+      display: flex; align-items: flex-start; gap: 1rem;
+    }
+    .included-num {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 300;
+      color: var(--gold-light);
+      opacity: 0.7;
+      line-height: 1;
+      min-width: 2rem;
+      flex-shrink: 0;
+    }
+    .included-body h3 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 400;
+      margin-bottom: 0.3rem;
+    }
+    .included-body p { font-size: 0.82rem; color: var(--slate-mid); line-height: 1.75; }
+
+    /* ============================================================
+       INVESTMENT PHILOSOPHY
+    ============================================================ */
+    #philosophy {
+      background: var(--slate);
+      padding-block: var(--section-pad);
+    }
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .philosophy-image {
+      aspect-ratio: 4/5;
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+    }
+    .philosophy-frame {
+      position: absolute;
+      top: -14px; left: -14px; right: 14px; bottom: 14px;
+      border: 1.5px solid rgba(212,180,131,0.35);
+      border-radius: var(--radius);
+      pointer-events: none;
+    }
+    .philosophy-text .t-eyebrow { color: var(--gold-light); margin-bottom: 0.75rem; }
+    .philosophy-text h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.2;
+    }
+    .philosophy-text h2 em { font-style: italic; color: var(--gold-light); }
+    .philosophy-text p {
+      margin-top: 1.25rem;
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.85;
+    }
+    .philosophy-text .btn { margin-top: 2rem; }
+
+    /* ============================================================
+       PAYMENT INFO
+    ============================================================ */
+    #payment { background: var(--ivory); }
+
+    .payment-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .payment-card {
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: var(--radius);
+      padding: 2rem 1.75rem;
+      background: var(--white);
+    }
+    .payment-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 0.75rem;
+    }
+    .payment-card p { font-size: 0.85rem; color: var(--slate-mid); line-height: 1.75; }
+
+    .payment-highlight {
+      margin-top: 1rem;
+      padding: 0.75rem 1rem;
+      background: var(--parchment);
+      border-radius: var(--radius);
+      font-size: 0.8rem;
+      color: var(--slate);
+      border-left: 3px solid var(--gold);
+    }
+
+    /* ============================================================
+       CTA BANNER
+    ============================================================ */
+    #cta-banner {
+      background: linear-gradient(135deg, #8A7060 0%, #5C4A3A 100%);
+      padding-block: 6rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    #cta-banner::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .cta-content { position: relative; z-index: 1; }
+    #cta-banner .t-eyebrow { color: var(--gold-light); }
+    #cta-banner h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 300; color: var(--white);
+      margin-top: 0.75rem; line-height: 1.1;
+    }
+    #cta-banner h2 em { font-style: italic; color: var(--gold-light); }
+    #cta-banner p {
+      color: rgba(255,255,255,0.65);
+      max-width: 440px; margin-inline: auto;
+      margin-top: 1rem;
+    }
+    .cta-urgency {
+      display: inline-block; margin-top: 1.5rem;
+      font-size: 0.68rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--gold-light);
+      padding: 0.4rem 1rem;
+      border: 1px solid rgba(212,180,131,0.4); border-radius: 100px;
+    }
+    .cta-btn-row {
+      display: flex; gap: 1rem; justify-content: center;
+      flex-wrap: wrap; margin-top: 2.5rem;
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    #footer { background: var(--slate); padding-block: 3.5rem 2rem; }
+    .footer-top {
+      display: grid; grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 3rem; padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-brand .logo {
+      font-family: var(--font-display); font-size: 1.4rem;
+      color: var(--white); letter-spacing: 0.04em;
+    }
+    .footer-brand p {
+      font-size: 0.85rem; color: rgba(255,255,255,0.4);
+      margin-top: 0.75rem; line-height: 1.75; max-width: 280px;
+    }
+    .footer-col h4 {
+      font-size: 0.68rem; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--gold-light); margin-bottom: 1.25rem;
+    }
+    .footer-col ul { display: flex; flex-direction: column; gap: 0.65rem; }
+    .footer-col ul a {
+      font-size: 0.85rem; color: rgba(255,255,255,0.45); transition: color var(--transition);
+    }
+    .footer-col ul a:hover { color: var(--white); }
+    .footer-bottom {
+      padding-top: 2rem; display: flex;
+      justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-bottom p { font-size: 0.75rem; color: rgba(255,255,255,0.3); }
+    .social-links { display: flex; gap: 1rem; }
+    .social-link {
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.15);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.45); transition: var(--transition);
+    }
+    .social-link:hover { border-color: var(--gold); color: var(--gold-light); }
+
+    /* ============================================================
+       SCROLL REVEAL
+    ============================================================ */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 1024px) {
+      .packages-grid { grid-template-columns: 1fr 1fr; }
+      .package-card.featured { transform: none; }
+      .philosophy-grid { grid-template-columns: 1fr; }
+      .philosophy-image { aspect-ratio: 16/9; }
+    }
+    @media (max-width: 900px) {
+      .promise-grid { grid-template-columns: repeat(2, 1fr); }
+      .session-card { grid-template-columns: 1fr; }
+      .session-image .img-placeholder { min-height: 220px; }
+      .session-pricing { flex-direction: row; justify-content: space-between; align-items: center; border-left: none; border-top: 1px solid rgba(0,0,0,0.05); padding: 1.25rem 1.5rem; }
+      .session-price-label, .session-price-amount, .session-price-note { text-align: left; }
+      .payment-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      .packages-grid { grid-template-columns: 1fr; }
+      .nav-links, .nav-book { display: none; }
+      .nav-toggle { display: flex; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .promise-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav id="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Mara Leigh Photography</a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="services.html" aria-current="page">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="nav-book">Book a Session</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" id="navToggle">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-drawer" id="navDrawer" role="navigation" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn btn-primary" style="text-align:center;">Book a Session</a>
+  </div>
+
+
+  <!-- ============================================================
+       PAGE HERO
+  ============================================================ -->
+  <header id="page-hero" aria-labelledby="page-title">
+    <div class="container">
+      <div class="hero-rule-group reveal">
+        <div class="hero-rule-line" aria-hidden="true"></div>
+        <span class="t-eyebrow" style="display:inline; margin:0;">Services &amp; Pricing</span>
+        <div class="hero-rule-line" aria-hidden="true"></div>
+      </div>
+      <h1 id="page-title" class="reveal">
+        Simple pricing,<br><em>no surprises</em>
+      </h1>
+      <p class="reveal reveal-delay-1">
+        Every package is built around what you actually need — transparent pricing,
+        no hidden fees, and print-ready digital files included in every session.
+      </p>
+    </div>
+  </header>
+
+
+  <!-- ============================================================
+       VALUE PROMISE STRIP
+  ============================================================ -->
+  <div id="promise" aria-label="Our guarantees">
+    <div class="container">
+      <div class="promise-grid">
+        <div class="promise-item">
+          <div class="promise-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div>
+            <h3>No Hidden Fees</h3>
+            <p>What you see is what you pay. All editing, files, and delivery are included.</p>
+          </div>
+        </div>
+        <div class="promise-item">
+          <div class="promise-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <h3>2-Week Delivery</h3>
+            <p>Fully edited galleries delivered in 2 weeks, or 3 for full wedding days.</p>
+          </div>
+        </div>
+        <div class="promise-item">
+          <div class="promise-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div>
+            <h3>Print-Ready Files</h3>
+            <p>Every image delivered at full resolution — ready to print at any size.</p>
+          </div>
+        </div>
+        <div class="promise-item">
+          <div class="promise-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <h3>Flexible Payment Plans</h3>
+            <p>A deposit holds your date; the balance splits into manageable installments.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       WEDDING PACKAGES
+  ============================================================ -->
+  <section id="weddings" class="section" aria-labelledby="weddings-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="t-eyebrow">Wedding Photography</span>
+        <h2 id="weddings-heading" class="t-section-title">Choose your<br>wedding package</h2>
+        <p>Every wedding package includes fully edited digital files, an online gallery, and a 48-hour sneak-peek preview. Travel within Greater Indianapolis is always included.</p>
+      </div>
+
+      <div class="packages-grid">
+
+        <!-- PACKAGE 1: Essential -->
+        <article class="package-card reveal">
+          <div class="package-image">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80" alt="Wedding ceremony coverage with bride and groom" loading="lazy">
+          </div>
+          <div class="package-body">
+            <h3 class="package-name">Essential</h3>
+            <p class="package-tagline">Perfect for intimate ceremonies &amp; elopements</p>
+            <div class="package-price">
+              <span class="price-from">Starting at</span>
+              <span class="price-amount">$[XXX]</span>
+            </div>
+            <div class="package-divider" aria-hidden="true"></div>
+            <p class="package-includes">What's included</p>
+            <ul class="package-features" aria-label="Essential package features">
+              <li class="feature-item">
+                <svg class="feature-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Up to 4 hours of coverage
+              </li>
+              <li class="feature-item">
+                <svg class="feature-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                200+ fully edited digital images
+              </li>
+              <li class="feature-item">
+                <svg class="feature-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Private online gallery &amp; download
+              </li>
+              <li class="feature-item">
+                <svg class="feature-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                48-hr sneak-peek preview
+              </li>
+              <li class="feature-item">
+                <svg class="feature-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Ceremony &amp; portraits
+              </li>
+              <li class="feature-item muted">
+                <svg class="feature-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                Second shooter
+              </li>
+              <li class="feature-item muted">
+                <svg class="feature-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                Reception coverage
+              </li>
+            </ul>
+            <a href="contact.html" class="btn btn-outline-dark">Book This Package</a>
+          </div>
+        </article>
+
+        <!-- PACKAGE 2: Signature — FEATURED -->
+        <article class="package-card featured reveal reveal-delay-1" aria-label="Most popular package">
+          <div class="package-badge">Most Popular</div>
+          <div class="package-image">
+            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80" alt="Full day wedding photography coverage" loading="lazy">
+          </div>
+          <div class="package-body">
+            <h3 class="package-name">Signature</h3>
+            <p class="package-tagline">Our most-booked package — the full story, start to finish</p>
+            <div class="package-price">
+              <span class="price-from">Starting at</span>
+              <span class="price-amount">$[XXX]</span>
+            </div>
+            <div class="package-divider" aria-hidden="true"></div>
+            <p class="package-includes">What's included</p>
+            <ul class="package-features" aria-label="Signature package features">
+              <li class="feature-item">
+                <svg class="feature-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Up to 8 hours of coverage
+              </li>
+              <li class="feature-item">
+                <svg class="feature-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                400+ fully edited digital images
+              </li>
+              <li class="feature-item">
+                <svg class="feature-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Private online gallery &amp; download
+              </li>
+              <li class="feature-item">
+                <svg class="feature-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                48-hr sneak-peek preview
+              </li>
+              <li class="feature-item">
+                <svg class="feature-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Getting ready through reception
+              </li>
+              <li class="feature-item">
+                <svg class="feature-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Complimentary engagement session
+              </li>
+              <li class="feature-item muted">
+                <svg class="feature-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                Second shooter
+              </li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary">Book This Package</a>
+          </div>
+        </article>
+
+        <!-- PACKAGE 3: Full Story -->
+        <article class="package-card reveal reveal-delay-2">
+          <div class="package-image">
+            <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1200&q=80" alt="All-day wedding coverage with bridal party" loading="lazy">
+          </div>
+          <div class="package-body">
+            <h3 class="package-name">Full Story</h3>
+            <p class="package-tagline">Every chapter, every moment — nothing left uncaptured</p>
+            <div class="package-price">
+              <span class="price-from">Starting at</span>
+              <span class="price-amount">$[XXX]</span>
+            </div>
+            <div class="package-divider" aria-hidden="true"></div>
+            <p class="package-includes">What's included</p>
+            <ul class="package-features" aria-label="Full Story package features">
+              <li class="feature-item">
+                <svg class="feature-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Up to 12 hours of coverage
+              </li>
+              <li class="feature-item">
+                <svg class="feature-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                600+ fully edited digital images
+              </li>
+              <li class="feature-item">
+                <svg class="feature-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Private online gallery &amp; download
+              </li>
+              <li class="feature-item">
+                <svg class="feature-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                48-hr sneak-peek preview
+              </li>
+              <li class="feature-item">
+                <svg class="feature-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Second photographer included
+              </li>
+              <li class="feature-item">
+                <svg class="feature-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Complimentary engagement session
+              </li>
+              <li class="feature-item">
+                <svg class="feature-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Custom print album included
+              </li>
+            </ul>
+            <a href="contact.html" class="btn btn-outline-dark">Book This Package</a>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="addons-note reveal">
+        Need something custom? All packages can be tailored.
+        <a href="#addons">View available add-ons</a> or <a href="contact.html">reach out directly</a>.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       OTHER SESSIONS
+  ============================================================ -->
+  <section id="other-sessions" class="section" aria-labelledby="sessions-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="t-eyebrow">All Other Sessions</span>
+        <h2 id="sessions-heading" class="t-section-title">Portraits, families,<br>events &amp; more</h2>
+        <p>Not planning a wedding? Every milestone deserves the same care and quality.</p>
+      </div>
+
+      <div class="session-list">
+
+        <!-- Portrait Session -->
+        <article class="session-card reveal">
+          <div class="session-image">
+            <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Outdoor portrait photography session" loading="lazy">
+          </div>
+          <div class="session-body">
+            <span class="session-cat">Portrait Sessions</span>
+            <h3 class="session-name">Individual &amp; Couple Portraits</h3>
+            <p class="session-desc">
+              Headshots, personal branding portraits, couple sessions, or just a reason to get dressed up and feel
+              good about yourself. Shot on location anywhere in the Indianapolis area — your choice of setting.
+            </p>
+            <div class="session-tags">
+              <span class="session-tag">1–2 Hours</span>
+              <span class="session-tag">50–100 Edited Images</span>
+              <span class="session-tag">Indoor or Outdoor</span>
+              <span class="session-tag">Style Guide Included</span>
+            </div>
+          </div>
+          <div class="session-pricing">
+            <span class="session-price-label">Starting at</span>
+            <span class="session-price-amount">$[XXX]</span>
+            <span class="session-price-note">Delivered in 2 weeks</span>
+            <a href="contact.html" class="btn btn-outline-gold" style="white-space:nowrap;">Book Now</a>
+          </div>
+        </article>
+
+        <!-- Family Session -->
+        <article class="session-card reveal">
+          <div class="session-image">
+            <img src="https://images.pexels.com/photos/1683975/pexels-photo-1683975.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Family photography session outdoors" loading="lazy">
+          </div>
+          <div class="session-body">
+            <span class="session-cat">Family Sessions</span>
+            <h3 class="session-name">Family &amp; Group Portraits</h3>
+            <p class="session-desc">
+              Your family as it is right now — candid, connected, and full of personality. Great for annual portraits,
+              holiday cards, milestone moments, or just because. I specialize in keeping kids calm and everyone laughing.
+            </p>
+            <div class="session-tags">
+              <span class="session-tag">1–2 Hours</span>
+              <span class="session-tag">60–120 Edited Images</span>
+              <span class="session-tag">Up to 8 People</span>
+              <span class="session-tag">Style Guide Included</span>
+            </div>
+          </div>
+          <div class="session-pricing">
+            <span class="session-price-label">Starting at</span>
+            <span class="session-price-amount">$[XXX]</span>
+            <span class="session-price-note">Delivered in 2 weeks</span>
+            <a href="contact.html" class="btn btn-outline-gold" style="white-space:nowrap;">Book Now</a>
+          </div>
+        </article>
+
+        <!-- Newborn Session -->
+        <article class="session-card reveal">
+          <div class="session-image">
+            <img src="https://images.pexels.com/photos/1257110/pexels-photo-1257110.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Newborn baby photography session" loading="lazy">
+          </div>
+          <div class="session-body">
+            <span class="session-cat">Newborn Sessions</span>
+            <h3 class="session-name">Newborn &amp; Baby Sessions</h3>
+            <p class="session-desc">
+              The first days go fast. Newborn sessions are typically scheduled within the first 5–14 days of life
+              for the best poses and sleep. Studio-quality results in the comfort of your home or a soft indoor location.
+            </p>
+            <div class="session-tags">
+              <span class="session-tag">2–3 Hours</span>
+              <span class="session-tag">40–80 Edited Images</span>
+              <span class="session-tag">First 14 Days Ideal</span>
+              <span class="session-tag">Family Poses Included</span>
+            </div>
+          </div>
+          <div class="session-pricing">
+            <span class="session-price-label">Starting at</span>
+            <span class="session-price-amount">$[XXX]</span>
+            <span class="session-price-note">Delivered in 2 weeks</span>
+            <a href="contact.html" class="btn btn-outline-gold" style="white-space:nowrap;">Book Now</a>
+          </div>
+        </article>
+
+        <!-- Church / Event -->
+        <article class="session-card reveal">
+          <div class="session-image">
+            <img src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=1200&q=80" alt="Church and event photography coverage" loading="lazy">
+          </div>
+          <div class="session-body">
+            <span class="session-cat">Church &amp; Event Coverage</span>
+            <h3 class="session-name">Events, Birthdays &amp; Church Services</h3>
+            <p class="session-desc">
+              From church milestones and anniversary celebrations to birthday parties and corporate gatherings —
+              every event has a story worth telling. Candid documentary coverage that captures the energy, community,
+              and emotion of your gathering.
+            </p>
+            <div class="session-tags">
+              <span class="session-tag">Hourly Rate Available</span>
+              <span class="session-tag">Half or Full Day</span>
+              <span class="session-tag">Candid + Posed</span>
+              <span class="session-tag">Custom Quote</span>
+            </div>
+          </div>
+          <div class="session-pricing">
+            <span class="session-price-label">Starting at</span>
+            <span class="session-price-amount">$[XXX]</span>
+            <span class="session-price-note">Custom quote available</span>
+            <a href="contact.html" class="btn btn-outline-gold" style="white-space:nowrap;">Get a Quote</a>
+          </div>
+        </article>
+
+        <!-- Mini Session -->
+        <article class="session-card reveal">
+          <div class="session-image">
+            <img src="https://images.pexels.com/photos/1128318/pexels-photo-1128318.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Mini family photography session" loading="lazy">
+          </div>
+          <div class="session-body">
+            <span class="session-cat">Mini Sessions</span>
+            <h3 class="session-name">30-Minute Mini Sessions</h3>
+            <p class="session-desc">
+              Quick, focused, and beautifully edited. Perfect for seasonal portraits, holiday cards,
+              a professional headshot, or updating your family photos without a full session commitment.
+              Offered at select dates throughout the year.
+            </p>
+            <div class="session-tags">
+              <span class="session-tag">30 Minutes</span>
+              <span class="session-tag">20–35 Edited Images</span>
+              <span class="session-tag">Seasonal Dates</span>
+              <span class="session-tag">1–4 People</span>
+            </div>
+          </div>
+          <div class="session-pricing">
+            <span class="session-price-label">Starting at</span>
+            <span class="session-price-amount">$[XXX]</span>
+            <span class="session-price-note">Delivered in 2 weeks</span>
+            <a href="contact.html" class="btn btn-outline-gold" style="white-space:nowrap;">Book Now</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       ADD-ONS
+  ============================================================ -->
+  <section id="addons" class="section" aria-labelledby="addons-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="t-eyebrow">Customize Your Package</span>
+        <h2 id="addons-heading" class="t-section-title">Available add-ons</h2>
+        <p>Enhance any package with these optional extras. All add-ons can be bundled at booking.</p>
+      </div>
+
+      <div class="addons-grid">
+        <div class="addon-card reveal">
+          <div class="addon-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 class="addon-name">Second Photographer</h3>
+          <p class="addon-desc">A second shooter captures different angles simultaneously — ideal for larger weddings or events where moments happen in multiple places at once.</p>
+          <span class="addon-price">+ $[XXX]</span>
+        </div>
+
+        <div class="addon-card reveal reveal-delay-1">
+          <div class="addon-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <h3 class="addon-name">Custom Print Album</h3>
+          <p class="addon-desc">A heirloom-quality lay-flat album, professionally designed and printed. Available in 10×10 or 12×12 sizes with 20–40 spreads.</p>
+          <span class="addon-price">+ $[XXX]</span>
+        </div>
+
+        <div class="addon-card reveal reveal-delay-2">
+          <div class="addon-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3 class="addon-name">Rush Delivery</h3>
+          <p class="addon-desc">Need your gallery faster? Rush delivery gets your fully edited images back to you within 5 business days of your session.</p>
+          <span class="addon-price">+ $[XXX]</span>
+        </div>
+
+        <div class="addon-card reveal">
+          <div class="addon-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3 class="addon-name">Travel Coverage</h3>
+          <p class="addon-desc">Available for sessions and weddings outside Greater Indianapolis. Destination packages available for out-of-state or international events.</p>
+          <span class="addon-price">Custom quote</span>
+        </div>
+
+        <div class="addon-card reveal reveal-delay-1">
+          <div class="addon-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          </div>
+          <h3 class="addon-name">Wall Art Prints</h3>
+          <p class="addon-desc">Professional-grade canvas or metal prints in a range of sizes, ready to hang. Ordered directly through your online gallery.</p>
+          <span class="addon-price">From $[XXX]</span>
+        </div>
+
+        <div class="addon-card reveal reveal-delay-2">
+          <div class="addon-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h3 class="addon-name">Engagement Session</h3>
+          <p class="addon-desc">A standalone engagement session — perfect for save-the-dates, social announcements, or just celebrating your relationship. Also a great way to get comfortable on camera before your wedding day.</p>
+          <span class="addon-price">+ $[XXX]</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       WHAT'S ALWAYS INCLUDED
+  ============================================================ -->
+  <section id="always-included" class="section section--alt" aria-labelledby="included-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="t-eyebrow">Every Session, Every Package</span>
+        <h2 id="included-heading" class="t-section-title">Always included,<br>no exceptions</h2>
+      </div>
+      <div class="included-grid">
+        <div class="included-item reveal">
+          <span class="included-num" aria-hidden="true">01</span>
+          <div class="included-body">
+            <h3>Pre-Session Consultation</h3>
+            <p>A call or chat before every session to align on location, outfits, timeline, and vision — so the day runs smoothly.</p>
+          </div>
+        </div>
+        <div class="included-item reveal reveal-delay-1">
+          <span class="included-num" aria-hidden="true">02</span>
+          <div class="included-body">
+            <h3>Professional Hand-Editing</h3>
+            <p>Every image is individually edited — color grading, skin retouching, and light balancing — never batch-filtered.</p>
+          </div>
+        </div>
+        <div class="included-item reveal reveal-delay-2">
+          <span class="included-num" aria-hidden="true">03</span>
+          <div class="included-body">
+            <h3>Private Online Gallery</h3>
+            <p>Password-protected gallery with easy download links, sharing features, and optional print ordering — active for 12 months.</p>
+          </div>
+        </div>
+        <div class="included-item reveal">
+          <span class="included-num" aria-hidden="true">04</span>
+          <div class="included-body">
+            <h3>Full-Resolution Digital Files</h3>
+            <p>All delivered images are high-resolution and print-ready at any size. No watermarks, no usage restrictions.</p>
+          </div>
+        </div>
+        <div class="included-item reveal reveal-delay-1">
+          <span class="included-num" aria-hidden="true">05</span>
+          <div class="included-body">
+            <h3>Style Guide</h3>
+            <p>A personalized what-to-wear guide sent before every session with color palette suggestions, outfit ideas, and location tips.</p>
+          </div>
+        </div>
+        <div class="included-item reveal reveal-delay-2">
+          <span class="included-num" aria-hidden="true">06</span>
+          <div class="included-body">
+            <h3>48-Hour Sneak Peek</h3>
+            <p>A small preview of your favorite images delivered within 48 hours of your session — because waiting is the hardest part.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       INVESTMENT PHILOSOPHY
+  ============================================================ -->
+  <section id="philosophy" aria-labelledby="philosophy-heading">
+    <div class="container">
+      <div class="philosophy-grid">
+        <div class="philosophy-image reveal">
+          <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1400&q=80" alt="Wedding couple investment photography example" loading="lazy">
+          <div class="philosophy-frame" aria-hidden="true"></div>
+        </div>
+        <div class="philosophy-text reveal reveal-delay-2">
+          <span class="t-eyebrow">On Investment</span>
+          <h2 id="philosophy-heading">
+            Why photography<br>is worth <em>every penny</em>
+          </h2>
+          <p>
+            Your wedding flowers will wilt. The cake will be eaten. The venue will host another event.
+            But the photos — those are yours forever. A decade from now, they'll be the thing you
+            reach for when you want to remember how that day actually felt.
+          </p>
+          <p>
+            I price my work to reflect 10 years of experience, hours of careful editing, and the
+            commitment to be fully present on your most important days. Every package is an investment
+            in memories that outlast everything else.
+          </p>
+          <a href="contact.html" class="btn btn-outline-light" style="border-color: rgba(212,180,131,0.5); color: var(--gold-light);">Let's Talk About Your Day</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       PAYMENT INFO
+  ============================================================ -->
+  <section id="payment" class="section" aria-labelledby="payment-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="t-eyebrow">Booking &amp; Payment</span>
+        <h2 id="payment-heading" class="t-section-title">Flexible &amp; straightforward</h2>
+        <p>Booking is simple. A deposit holds your date, and I work with you on the rest.</p>
+      </div>
+      <div class="payment-grid">
+        <div class="payment-card reveal">
+          <h3>Securing Your Date</h3>
+          <p>A non-refundable retainer of 25–30% of your package total is required to officially reserve your session or wedding date. Dates are not held without a signed contract and deposit.</p>
+          <div class="payment-highlight">Popular dates fill 6–12 months in advance — book early to avoid missing out.</div>
+        </div>
+        <div class="payment-card reveal reveal-delay-1">
+          <h3>Payment Plans</h3>
+          <p>The remaining balance can be split into installments leading up to your session date. Flexible schedules are available — just ask and we'll work something out that fits your budget.</p>
+          <div class="payment-highlight">Full balance is due no later than 7 days before your session date.</div>
+        </div>
+        <div class="payment-card reveal reveal-delay-2">
+          <h3>Accepted Methods</h3>
+          <p>Payment is accepted via Venmo, Zelle, cash, or credit card. A small processing fee applies to credit card payments. All payments are confirmed in writing.</p>
+          <div class="payment-highlight">Have questions about pricing or packages? <a href="contact.html" style="color: var(--gold);">Reach out anytime.</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CTA BANNER
+  ============================================================ -->
+  <section id="cta-banner" aria-labelledby="cta-heading">
+    <div class="container cta-content">
+      <div class="reveal">
+        <span class="t-eyebrow">Let's Get Started</span>
+        <h2 id="cta-heading">
+          Found the right<br><em>package?</em>
+        </h2>
+        <p>Reach out and let's make it official. I'd love to be part of your story.</p>
+        <div class="cta-urgency">Now booking Summer &amp; Fall 2026</div>
+        <div class="cta-btn-row">
+          <a href="contact.html" class="btn btn-primary">Book Your Session</a>
+          <a href="portfolio.html" class="btn btn-outline-light">View the Portfolio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer id="footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo">[STUDIO NAME]</div>
+          <p>Indianapolis wedding &amp; event photographer capturing real moments across Greater Indiana for over a decade.</p>
+          <div class="social-links" style="margin-top:1.5rem;">
+            <a href="https://instagram.com/photography" class="social-link" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://facebook.com/photography" class="social-link" aria-label="Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://linkedin.com" class="social-link" aria-label="LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="services.html">Services &amp; Pricing</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#weddings">Wedding Photography</a></li>
+            <li><a href="#other-sessions">Portrait Sessions</a></li>
+            <li><a href="#other-sessions">Family &amp; Events</a></li>
+            <li><a href="#other-sessions">Newborn Sessions</a></li>
+            <li><a href="#other-sessions">Mini Sessions</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 [STUDIO NAME]. All rights reserved. Indianapolis, IN.</p>
+        <p>Site by <a href="https://yourwebbuild.com" style="color:var(--gold-light);">YourWebBuild</a></p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+  <script>
+    // ── Mobile nav ────────────────────────────────────────────────
+    const navToggle = document.getElementById('navToggle');
+    const navDrawer = document.getElementById('navDrawer');
+    navToggle.addEventListener('click', () => {
+      const open = navDrawer.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open);
+    });
+    navDrawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      navDrawer.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }));
+
+    // ── Scroll reveal ─────────────────────────────────────────────
+    const revealEls = document.querySelectorAll('.reveal');
+    const ro = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => ro.observe(el));
+  </script>
+
+</body>
+</html>
